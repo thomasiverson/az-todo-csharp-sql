@@ -40,7 +40,8 @@ param sqlAdminPassword string
 param appUserPassword string
 
 var abbrs = loadJsonContent('./abbreviations.json')
-var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
+//var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
+var resourceToken = toLower(uniqueString(environmentName, location))
 var tags = { 'azd-env-name': environmentName }
 
 // Organize resources in a resource group
